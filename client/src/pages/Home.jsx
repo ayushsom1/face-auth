@@ -1,10 +1,8 @@
-// src/components/HomePage.js
-
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     return (
-        <div className="bg-gradient-to-r from-blue-500 to-purple-600 h-screen flex flex-col justify-center items-center">
+        <div className="bg-gray-900 h-screen flex flex-col justify-center items-center">
             <h1 className="text-white text-4xl font-semibold mb-6">
                 Welcome to Face Recognition App
             </h1>

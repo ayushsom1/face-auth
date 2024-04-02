@@ -7,7 +7,7 @@ const Alert = ({ type, message }) => {
     };
 
     return (
-        <div className={`p-4 rounded ${alertClasses[type]}`}>
+        <div className={`p-4 rounded ${alertClasses[type]} my-4`}>
             {message}
         </div>
     );

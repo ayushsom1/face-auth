@@ -1,35 +1,4 @@
 /* eslint-disable react/prop-types */
-// /* eslint-disable react/prop-types */
-// import { useRef } from 'react';
-
-// const Webcam = ({ onCapture }) => {
-//     const webcamRef = useRef(null);
-
-//     const capture = () => {
-//         const base64Image = webcamRef.current.getScreenshot().split(',')[1];
-//         onCapture(base64Image);
-//     };
-
-//     return (
-//         <div className="flex justify-center items-center flex-col">
-//             <Webcam
-//                 audio={false}
-//                 ref={webcamRef}
-//                 screenshotFormat="image/jpeg"
-//                 className="w-80 h-60 mb-4 rounded-lg shadow-lg"
-//             />
-//             <button
-//                 onClick={capture}
-//                 className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300"
-//             >
-//                 Capture
-//             </button>
-//         </div>
-//     );
-// };
-
-// export default Webcam;
-
 
 import Webcam from "react-webcam";
 import { useRef, useState } from "react";
@@ -38,7 +7,6 @@ const CustomWebcam = ({ onCapture }) => {
     const webcamRef = useRef(null);
     const [imgSrc, setImgSrc] = useState(null);
 
-    // create a capture function
     const capture = () => {
         const imageSrc = webcamRef.current.getScreenshot();
         // console.log(imageSrc);
@@ -67,21 +35,33 @@ const CustomWebcam = ({ onCapture }) => {
         setImgSrc(null);
     };
     return (
-        <div className="container">
+        <div className="container bg-gray-100 rounded-lg shadow-lg p-6">
             {imgSrc ? (
-                <img src={imgSrc} alt="webcam" />
+                <img src={imgSrc} alt="webcam" className="rounded-lg shadow-lg" />
             ) : (
-                <Webcam height={600} width={600} ref={webcamRef} mirrored={true} />
+                <Webcam
+                    height={600}
+                    width={600}
+                    ref={webcamRef}
+                    mirrored={true}
+                    className="rounded-lg shadow-lg"
+                />
             )}
-            <div className="btn-container">
+            <div className="btn-container mt-4">
                 {imgSrc ? (
                     <button
-                        className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 mt-4"
-                        onClick={retake}>Retake photo</button>
+                        className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300"
+                        onClick={retake}
+                    >
+                        Retake photo
+                    </button>
                 ) : (
                     <button
-                        className="w-full bg-indigo-200 hover:bg-indigo-400 text-Blue font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 mt-4"
-                        onClick={capture}>Capture photo</button>
+                        className="w-full bg-indigo-200 hover:bg-indigo-400 text-blue-800 font-semibold py-2 px-4 rounded-md shadow-md transition duration-300"
+                        onClick={capture}
+                    >
+                        Capture photo
+                    </button>
                 )}
             </div>
         </div>
