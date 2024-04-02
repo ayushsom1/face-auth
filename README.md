@@ -29,9 +29,7 @@ You can access the live demo of the application at [https://face-auth-weld.verce
 
 1.  Navigate to the backend directory:  `cd server`
 2.  Install dependencies:  `npm install`
-3.  Create a  `.env`  file in the  `backend`  directory and add the following environment variables:
-    -   `MONGO_URI`: URI for your MongoDB database
-4.  Start the backend server:  `node server`
+3.  Start the backend server:  `node server`
 
 ### Frontend Setup
 
