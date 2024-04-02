@@ -13,7 +13,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://ryzensingh:admin123@cluster0.kzz5ihj.mongodb.net/faceAuth');
 
 async function loadModels() {
-    const model_url = '../Weights'
+    const model_url = './Weights'
     await faceapi.nets.faceRecognitionNet.loadFromDisk(model_url);
     await faceapi.nets.faceLandmark68Net.loadFromDisk(model_url);
     await faceapi.nets.ssdMobilenetv1.loadFromDisk(model_url);
