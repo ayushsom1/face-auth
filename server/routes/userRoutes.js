@@ -28,7 +28,9 @@ router.post("/register", async (req, res) => {
         if (!faceDescriptor) {
             return res.status(400).json({ error: 'No face detected' });
         }
-        console.log(faceDescriptor + " 1 " + typeof faceDescriptor);
+
+        // console.log(faceDescriptor + " 1 " + typeof faceDescriptor);
+
         //Create a new user with the face descriptor
         const newUser = new User({
             username,
@@ -36,9 +38,8 @@ router.post("/register", async (req, res) => {
             faceDescriptor: Array.from(faceDescriptor)
         });
 
-        console.log(newUser)
+        // console.log(newUser)
 
-        //Save the user to the database
         await newUser.save()
 
         res.status(201).json({ message: "User registered successfully" })
@@ -96,4 +97,6 @@ router.get('/all', async (req, res) => {
         })
     }
 })
+
+
 module.exports = router

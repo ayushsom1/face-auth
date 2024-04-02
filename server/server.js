@@ -4,7 +4,6 @@ const cors = require('cors');
 const app = express()
 const port = 3000 || process.env.PORT;
 const faceapi = require('face-api.js');
-// app.use('@tensorflow/tfjs-node');
 
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
