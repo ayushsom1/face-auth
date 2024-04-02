@@ -17,13 +17,13 @@ const Login = () => {
     const handleLogin = async () => {
         setIsLoading(true); // Set isLoading to true before making the API call
         try {
-            await axios.post('http://localhost:3000/api/login', {
+            await axios.post('https://face-auth-ekh4.onrender.com/api/login', {
                 username,
                 imageData,
             });
 
             setError('Succesfully registerd');
-            navigate('/landing',{state: {username}});
+            navigate('/landing', { state: { username } });
         } catch (error) {
             console.error(error);
         } finally {

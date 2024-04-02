@@ -18,9 +18,9 @@ const Register = () => {
     const handleRegister = async () => {
         setIsLoading(true); // Set isLoading to true before making the API call
         try {
-            console.log(typeof imageData)
-            console.log(imageData)
-            await axios.post('http://localhost:3000/api/register', {
+            // console.log(typeof imageData)
+            // console.log(imageData)
+            await axios.post('https://face-auth-ekh4.onrender.com/api/register', {
                 username,
                 imageData,
             });
