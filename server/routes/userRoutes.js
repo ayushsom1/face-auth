@@ -9,7 +9,7 @@ faceapi.env.monkeyPatch({ Canvas, Image, ImageData });
 const getFaceDescriptor = async (imageData) => {
     const img = await canvas.loadImage(Buffer.from(imageData, 'base64'));
     const detections = await faceapi
-        .detectSingleFace(img)
+        .detectSingleFace(img, new faceapi.SsdMobilenetv1Options())
         .withFaceLandmarks()
         .withFaceDescriptor();
     return detections ? detections.descriptor : null;
